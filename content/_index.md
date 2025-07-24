@@ -35,11 +35,12 @@ sections:
       title: '📚 My Research'
       subtitle: ''
       text: |-
-        Use this area to speak to your mission. I'm a research scientist in the Moonshot team at DeepMind. I blog about machine learning, deep learning, and moonshots.
+        I'm Amirali, a Computer Science Ph.D. student at the North Carolina State University. I am intrested in exploring methods that are smarter and faster than the current LLM trends.
 
-        I apply a range of qualitative and quantitative methods to comprehensively investigate the role of science and technology in the economy.
+        I'm researching on the intersection of machine learning and software engineering. Some call it Automated software engineering or AI4SE!
         
-        Please reach out to collaborate 😃
+        You have an intresting idea in the field?
+        Don't hesitate to reach out 😃
     design:
       columns: '1'
   - block: collection
