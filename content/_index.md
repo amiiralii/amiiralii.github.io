@@ -36,6 +36,7 @@ sections:
       subtitle: ''
       text: |-
         I do explore Machine learning use cases in software engineering. Some folks call the field Automated Software Engineering, or AI4SE or even ML4SE! 
+        
         You wanna here an unpopular opinion of mine? get ready! LLMs are overrated!! I am not a fan of today's trendy complex AI (language models). My PhD advisor, Dr. Timm Menzies, has the same opinion. Instead, I try to come up with simpler solutions that are as efficient, but exponentially cheaper. check out my latest works to see more.
         
         you're intrested too? or wanna share your thoughts?
