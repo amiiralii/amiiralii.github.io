@@ -4,9 +4,9 @@
 # This file is formatted using YAML syntax - learn more at https://learnxinyminutes.com/docs/yaml/
 
 # Website name
-title: Amirali Rayegan Personal Website
+title: Amirali Rayegan
 # Website URL
-baseURL: 'https://example.com/'
+baseURL: 'https://amiiralii.github.io/'
 
 ############################
 ## LANGUAGE
@@ -40,7 +40,7 @@ outputs:
 imaging:
   resampleFilter: lanczos
   quality: 80
-  anchor: smart
+  anchor: top
 timeout: 600000
 taxonomies:
   author: authors
