@@ -1,23 +1,22 @@
 ---
-title: 'An example conference paper'
+title: 'A comparative study of machine learning techniques for stock price prediction'
 
 # Authors
 # If you created a profile for a user (e.g. the default `admin` user), write the username (folder name) here
 # and it will be replaced with their full name and linked to their profile.
 authors:
   - admin
-  - Robert Ford
 
-# Author notes (optional)
-author_notes:
-  - 'Equal contribution'
-  - 'Equal contribution'
+# # Author notes (optional)
+# author_notes:
+#   - 'Equal contribution'
+#   - 'Equal contribution'
 
-date: '2013-07-01T00:00:00Z'
+date: '2022-12-01T00:00:00Z'
 doi: ''
 
 # Schedule page publish date (NOT publication's date).
-publishDate: '2017-01-01T00:00:00Z'
+publishDate: '202-12-01T00:00:00Z'
 
 # Publication type.
 # Accepts a single type but formatted as a YAML list (for Hugo requirements).
@@ -25,16 +24,18 @@ publishDate: '2017-01-01T00:00:00Z'
 publication_types: ['paper-conference']
 
 # Publication name and optional abbreviated publication name.
-publication: In *Hugo Blox Builder Conference*
+publication: 2022 8th Iranian Conference on Signal Processing and Intelligent Systems (ICSPIS)
 publication_short: In *ICW*
 
-abstract: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.
+abstract: Stock price prediction has garnered significant interest among researchers and investors. Machine learning has shown great potential to produce accurate forecasts in the past few years. This paper has applied several machine learning techniques to develop a valid forecast consisting of linear models and various artificial neural networks. We have tested our models on the daily EURUSD pair dataset from the foreign exchange market and the daily S&P 500 dataset from the US stock market. Lastly, we have generated a fair comparison between different models and defined best practices for each domain. Our results indicate the efficiency of the linear models on the EURUSD dataset. Moreover, although deep neural networks have the best performance in predicting the exact price of the S&P 500, we found out that the ARIMA model can forecast the direction of the stock price better than any other model.
 
 # Summary. An optional shortened abstract.
-summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum.
+summary: Applying various Machine Learning on stock market price prediction
 
 tags:
-  - Large Language Models
+  - Neural Networks
+  - Decision Trees
+  - Stock Price Prediciton
 
 # Display this page in the Featured widget?
 featured: true
@@ -44,14 +45,14 @@ featured: true
 # - name: Custom Link
 #   url: http://example.org
 
-url_pdf: ''
-url_code: 'https://github.com/HugoBlox/hugo-blox-builder'
-url_dataset: 'https://github.com/HugoBlox/hugo-blox-builder'
+url_pdf: 'https://ieeexplore.ieee.org/abstract/document/10044075'
+url_code: ''
+url_dataset: ''
 url_poster: ''
 url_project: ''
 url_slides: ''
-url_source: 'https://github.com/HugoBlox/hugo-blox-builder'
-url_video: 'https://youtube.com'
+url_source: ''
+url_video: ''
 
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder.
