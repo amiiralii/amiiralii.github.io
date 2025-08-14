@@ -1,7 +1,7 @@
 ---
 # Leave the homepage title empty to use the site title
 title: ""
-date: 2022-10-24
+date: 2025-8-20
 type: landing
 
 design:
@@ -35,12 +35,11 @@ sections:
       title: '📚 My Research'
       subtitle: ''
       text: |-
-        I'm Amirali, a Computer Science Ph.D. student at the North Carolina State University. I am intrested in exploring methods that are smarter and faster than the current LLM trends.
-
-        I'm researching on the intersection of machine learning and software engineering. Some call it Automated software engineering or AI4SE!
+        I do explore Machine learning use cases in software engineering. Some folks call the field Automated Software Engineering, or AI4SE or even ML4SE! 
+        You wanna here an unpopular opinion of mine? get ready! LLMs are overrated!! I am not a fan of today's trendy complex AI (language models). My PhD advisor, Dr. Timm Menzies, has the same opinion. Instead, I try to come up with simpler solutions that are as efficient, but exponentially cheaper. check out my latest works to see more.
         
-        You have an intresting idea in the field?
-        Don't hesitate to reach out 😃
+        you're intrested too? or wanna share your thoughts?
+        Don't hesitate to hit me up 😃
     design:
       columns: '1'
   - block: collection
