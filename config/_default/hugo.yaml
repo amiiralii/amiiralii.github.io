@@ -41,6 +41,8 @@ imaging:
   resampleFilter: lanczos
   quality: 80
   anchor: smart
+  exif:
+    orientation: 1
 timeout: 600000
 taxonomies:
   author: authors
