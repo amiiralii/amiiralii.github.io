@@ -80,9 +80,9 @@ sections:
       # title: Recent News
       # subtitle: ''
       # text: ''
-      Page type to display. E.g. post, talk, publication...
+      #Page type to display. E.g. post, talk, publication...
       # page_type: post
-      Choose how many pages you would like to display (0 = all pages)
+      #Choose how many pages you would like to display (0 = all pages)
       # count: 5
       # Filter on criteria
       # filters:
