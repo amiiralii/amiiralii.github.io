@@ -14,6 +14,19 @@
 }
 
 /* Hide social sharing buttons on publication pages */
-section.flex.flex-row.flex-wrap.justify-center.pt-4.text-xl {
+section.flex.flex-row.flex-wrap.justify-center.pt-4.text-xl,
+section:has(a[id*="share-link"]) {
+  display: none !important;
+}
+
+/* Alternative selectors for sharing buttons */
+a[id*="share-link"] {
+  display: none !important;
+}
+
+/* Hide the entire sharing section by targeting any section with sharing links */
+section:has(a[href*="facebook.com/sharer"]),
+section:has(a[href*="linkedin.com/shareArticle"]),
+section:has(a[href*="whatsapp://send"]) {
   display: none !important;
 }

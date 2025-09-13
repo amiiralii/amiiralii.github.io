@@ -13,13 +13,38 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   // Remove social sharing buttons from publication pages
-  const sharingSection = document.querySelector('section.flex.flex-row.flex-wrap.justify-center.pt-4.text-xl');
-  if (sharingSection) {
-    // Check if this section contains social sharing links
-    const sharingLinks = sharingSection.querySelectorAll('a[id*="share-link"]');
+  // Try multiple selectors to find the sharing section
+  const sharingSectionSelectors = [
+    'section.flex.flex-row.flex-wrap.justify-center.pt-4.text-xl',
+    'section:has(a[id*="share-link"])',
+    'section:has(a[href*="facebook.com/sharer"])',
+    'section:has(a[href*="linkedin.com/shareArticle"])',
+    'section:has(a[href*="whatsapp://send"])'
+  ];
+  
+  let sharingSection = null;
+  for (const selector of sharingSectionSelectors) {
+    sharingSection = document.querySelector(selector);
+    if (sharingSection) break;
+  }
+  
+  // Also try finding by sharing links directly
+  if (!sharingSection) {
+    const sharingLinks = document.querySelectorAll('a[id*="share-link"]');
     if (sharingLinks.length > 0) {
-      // Remove the entire sharing section
-      sharingSection.remove();
+      // Find the parent section of the first sharing link
+      sharingSection = sharingLinks[0].closest('section');
     }
+  }
+  
+  if (sharingSection) {
+    // Remove the entire sharing section
+    sharingSection.remove();
+    console.log('Social sharing section removed');
+  } else {
+    // Fallback: remove individual sharing links
+    const allSharingLinks = document.querySelectorAll('a[id*="share-link"], a[href*="facebook.com/sharer"], a[href*="linkedin.com/shareArticle"], a[href*="whatsapp://send"], a[href*="mailto:"][title="Email"]');
+    allSharingLinks.forEach(link => link.remove());
+    console.log('Individual sharing links removed:', allSharingLinks.length);
   }
 });
