@@ -1,0 +1,14 @@
+/* Custom CSS to hide Hugo Blox Builder attribution */
+.powered-by.text-center:has(a[href*="hugoblox.com"]) {
+  display: none !important;
+}
+
+/* Alternative selector for browsers that don't support :has() */
+.powered-by.text-center a[href*="hugoblox.com"] {
+  display: none !important;
+}
+
+/* Hide the entire paragraph containing Hugo Blox attribution */
+.powered-by.text-center:last-of-type {
+  display: none !important;
+}
