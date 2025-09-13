@@ -6,6 +6,8 @@ title: 'A comparative study of machine learning techniques for stock price predi
 # and it will be replaced with their full name and linked to their profile.
 authors:
   - admin
+  - Ali Shiri
+  - Behnam Bahrak
 
 # # Author notes (optional)
 # author_notes:
