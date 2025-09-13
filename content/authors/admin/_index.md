@@ -24,7 +24,7 @@ role: PhD Student
 
 # Organizations/Affiliations to display in Biography blox
 organizations:
-  - name: NCSU
+  - name: North Carolina State University
     url: https://www.csc.ncsu.edu/index.php
 
 # Social network links
@@ -43,7 +43,7 @@ profiles:
 interests:
   - Artificial Intelligence
   - Machine Learning
-  - knowledge Distillation 
+  - Software Engineering
 
 education:
   - area: Ph.D. Computer Science
