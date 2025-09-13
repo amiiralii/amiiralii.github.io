@@ -12,3 +12,8 @@
 .powered-by.text-center:last-of-type {
   display: none !important;
 }
+
+/* Hide social sharing buttons on publication pages */
+section.flex.flex-row.flex-wrap.justify-center.pt-4.text-xl {
+  display: none !important;
+}

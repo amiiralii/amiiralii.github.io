@@ -11,4 +11,15 @@ document.addEventListener('DOMContentLoaded', function() {
       element.remove();
     }
   });
+
+  // Remove social sharing buttons from publication pages
+  const sharingSection = document.querySelector('section.flex.flex-row.flex-wrap.justify-center.pt-4.text-xl');
+  if (sharingSection) {
+    // Check if this section contains social sharing links
+    const sharingLinks = sharingSection.querySelectorAll('a[id*="share-link"]');
+    if (sharingLinks.length > 0) {
+      // Remove the entire sharing section
+      sharingSection.remove();
+    }
+  }
 });

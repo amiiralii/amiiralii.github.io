@@ -13,7 +13,7 @@ doi: ''
 # Publication type.
 # Accepts a single type but formatted as a YAML list (for Hugo requirements).
 # Enter a publication type from the CSL standard.
-publication_types: ["article-journal"]
+publication_types: ["article"]
 
 # Publication name and optional abbreviated publication name.
 # publication: "*Journal of Source Themes, 1*(1)"
@@ -29,12 +29,13 @@ tags:
 - Multi-objective optimization
 - Explainable AI
 
-# hugoblox:
-#   ids:
-#     arxiv: 1512.04133v1
+hugoblox:
+  ids:
+    arxiv: 2509.08667
 
 url_pdf: 'https://arxiv.org/pdf/2509.08667'
 url_code: 'https://github.com/amiiralii/Minimal-Data-Maximum-Clarity'
+
 
 
 
