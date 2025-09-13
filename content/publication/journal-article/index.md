@@ -35,12 +35,7 @@ tags:
 
 url_pdf: 'https://arxiv.org/pdf/2509.08667'
 url_code: 'https://github.com/amiiralii/Minimal-Data-Maximum-Clarity'
-url_dataset: ''
-url_poster: ''
-url_project: ''
-url_slides: ''
-url_source: ''
-url_video: ''
+
 
 
 # Featured image
@@ -48,7 +43,7 @@ url_video: ''
 image:
   caption: 'Image credit: [**Unsplash**](https://unsplash.com/photos/jdD8gXaTZsc)'
   focal_point: ""
-  preview_only: false
+  preview_only: True
 
 # Associated Projects (optional).
 #   Associate this publication with one or more of your projects.
