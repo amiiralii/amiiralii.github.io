@@ -47,4 +47,24 @@ document.addEventListener('DOMContentLoaded', function() {
     allSharingLinks.forEach(link => link.remove());
     console.log('Individual sharing links removed:', allSharingLinks.length);
   }
+
+  // Make inline links look like normal text
+  const contentLinks = document.querySelectorAll('p a, .content a, main a, article a');
+  contentLinks.forEach(function(link) {
+    // Skip button-style links
+    if (!link.classList.contains('btn') && !link.classList.contains('button')) {
+      link.style.color = 'inherit';
+      link.style.textDecoration = 'none';
+      link.style.fontWeight = 'inherit';
+      link.style.fontSize = 'inherit';
+      
+      // Add hover effect
+      link.addEventListener('mouseenter', function() {
+        this.style.textDecoration = 'underline';
+      });
+      link.addEventListener('mouseleave', function() {
+        this.style.textDecoration = 'none';
+      });
+    }
+  });
 });
