@@ -35,12 +35,11 @@ sections:
       title: '📚 My Research'
       subtitle: ''
       text: |-
-        I do explore Machine learning use cases in software engineering. Some folks call the field Automated Software Engineering, or AI4SE or even ML4SE! 
-        
-        You wanna here an unpopular opinion of mine? get ready! LLMs are overrated!! I am not a fan of today's trendy complex AI (language models). My PhD advisor, Dr. Timm Menzies, has the same opinion. Instead, I try to come up with simpler solutions that are as efficient, but exponentially cheaper. check out my latest works to see more.
-        
-        you're intrested too? or wanna share your thoughts?
-        Don't hesitate to hit me up 😃
+          Bigger isn’t always better. My research, guided by my advisor Dr. Timm Menzies, challenges the idea that ML in software engineering needs massive datasets to be effective. Instead, I explore how we can do more with less: tackling real SE problems with fewer, higher-quality labels.
+
+          This approach, which I call “Less, but better”, is about making ML practical, efficient, and impactful in the real world. Just as importantly, leaner models bring greater transparency and explainability, helping researchers and practitioners understand why models behave the way they do, not just what they predict. By combining efficiency with clarity, I aim to build solutions that are not only accurate, but also actionable and trustworthy.
+
+          Interested, or want to share your thoughts? Don’t hesitate to reach out 😃
     design:
       columns: '1'
   # - block: collection
