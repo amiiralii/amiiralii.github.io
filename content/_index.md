@@ -35,7 +35,7 @@ sections:
       title: '📚 My Research'
       subtitle: ''
       text: |-
-          Bigger isn't always better. My research, guided by my advisor Dr. <a href="https://timm.fyi/" style="color: inherit; text-decoration: none; font-weight: inherit;">Timm Menzies</a>, challenges the idea that ML in software engineering needs massive datasets to be effective. Instead, I explore how we can do more with less: tackling real SE problems with fewer, higher-quality labels.
+          Bigger isn't always better. My research, guided by my advisor Dr. <a href="https://timm.fyi/" style="color: inherit; text-decoration: none; font-weight: bold; font-style: italic;" onmouseover="this.style.color='#6EE7B7'" onmouseout="this.style.color='inherit'">Timm Menzies</a>, challenges the idea that ML in software engineering needs massive datasets to be effective. Instead, I explore how we can do more with less, tackling real SE problems with fewer, higher-quality labels.
 
           This approach, which I call “Less, but better”, is about making ML practical, efficient, and impactful in the real world. Just as importantly, leaner models bring greater transparency and explainability, helping researchers and practitioners understand why models behave the way they do, not just what they predict. By combining efficiency with clarity, I aim to build solutions that are not only accurate, but also actionable and trustworthy.
 
