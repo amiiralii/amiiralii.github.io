@@ -43,23 +43,9 @@ article a {
   font-size: inherit !important;
 }
 
-.content a:hover,
-.text-content a:hover,
-.page-content a:hover,
-main a:hover,
-article a:hover {
-  color: inherit !important;
-  text-decoration: underline !important;
-}
-
 /* Alternative: Target links in paragraphs specifically */
 p a {
   color: inherit !important;
   text-decoration: none !important;
   font-weight: inherit !important;
-}
-
-p a:hover {
-  color: inherit !important;
-  text-decoration: underline !important;
 }
