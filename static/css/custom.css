@@ -1,30 +1,29 @@
-/* Custom CSS to hide Hugo Blox Builder attribution */
+/* Custom CSS to hide Hugo Blox Builder attribution and social sharing buttons */
+/* Version 2.0 - Clean version without button interference */
+
+/* Hide Hugo Blox Builder attribution */
 .powered-by.text-center:has(a[href*="hugoblox.com"]) {
   display: none !important;
 }
 
-/* Alternative selector for browsers that don't support :has() */
 .powered-by.text-center a[href*="hugoblox.com"] {
   display: none !important;
 }
 
-/* Hide the entire paragraph containing Hugo Blox attribution */
 .powered-by.text-center:last-of-type {
   display: none !important;
 }
 
-/* Hide social sharing buttons on publication pages */
+/* Hide social sharing buttons */
 section.flex.flex-row.flex-wrap.justify-center.pt-4.text-xl,
 section:has(a[id*="share-link"]) {
   display: none !important;
 }
 
-/* Alternative selectors for sharing buttons */
 a[id*="share-link"] {
   display: none !important;
 }
 
-/* Hide the entire sharing section by targeting any section with sharing links */
 section:has(a[href*="facebook.com/sharer"]),
 section:has(a[href*="linkedin.com/shareArticle"]),
 section:has(a[href*="whatsapp://send"]) {
