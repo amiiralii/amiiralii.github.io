@@ -31,21 +31,3 @@ section:has(a[href*="whatsapp://send"]) {
   display: none !important;
 }
 
-/* Make inline links look like normal text - more specific selectors */
-.content a,
-.text-content a,
-.page-content a,
-main a,
-article a {
-  color: inherit !important;
-  text-decoration: none !important;
-  font-weight: inherit !important;
-  font-size: inherit !important;
-}
-
-/* Alternative: Target links in paragraphs specifically */
-p a {
-  color: inherit !important;
-  text-decoration: none !important;
-  font-weight: inherit !important;
-}
