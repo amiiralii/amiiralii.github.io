@@ -1,0 +1,1523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amirali Rayegan</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='85' font-size='90'>🏙️</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        :root {
+            --bg: #E2ECF8;
+            --bg-warm: #d8e7f6;
+            --bg-card: #F6FAFE;
+            --accent: #2d71b8;
+            --accent-hover: #265B93;
+            --accent-light: #B7D1EF;
+            --accent-bg: rgba(45, 113, 184, 0.17);
+            --secondary: #5C8DC3;
+            --text: #203040;
+            --text-secondary: #42688a;
+            --text-muted: #7891af;
+            --border: rgba(46, 107, 164, 0.15);
+            --shadow-sm: 0 2px 8px rgba(46, 107, 164, 0.12);
+            --shadow: 0 8px 30px rgba(46, 107, 164, 0.20);
+            --shadow-lg: 0 20px 50px rgba(46, 107, 164, 0.28);
+            --shadow-accent: 0 10px 40px rgba(45, 113, 184, 0.32);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            font-weight: 400;
+        }
+
+        /* Animated background shapes */
+        .bg-shapes {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .shape {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.4;
+        }
+
+        .shape-1 {
+            width: 500px;
+            height: 500px;
+            background: linear-gradient(135deg, var(--accent-light) 0%, transparent 70%);
+            top: -150px;
+            right: -100px;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        .shape-2 {
+            width: 400px;
+            height: 400px;
+            background: linear-gradient(135deg, rgba(124, 154, 146, 0.15) 0%, transparent 70%);
+            bottom: 10%;
+            left: -100px;
+            animation: float 25s ease-in-out infinite reverse;
+        }
+
+        .shape-3 {
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, var(--accent-light) 0%, transparent 70%);
+            top: 50%;
+            left: 60%;
+            animation: float 18s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(30px, -30px) scale(1.05); }
+            66% { transform: translate(-20px, 20px) scale(0.95); }
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 1rem 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(253, 248, 244, 0.85);
+            backdrop-filter: blur(20px);
+            z-index: 100;
+            transition: all 0.4s ease;
+        }
+
+        nav.scrolled {
+            box-shadow: var(--shadow-sm);
+        }
+
+        .logo {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--accent);
+            letter-spacing: -0.02em;
+            transition: all 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 1.1fr;
+            gap: 5rem;
+            padding: 8rem 4rem 4rem;
+            max-width: 1300px;
+            margin: 0 auto;
+            align-items: center;
+        }
+
+        .hero-photo {
+            display: flex;
+            justify-content: center;
+            animation: fadeInLeft 0.8s ease forwards;
+        }
+
+        @keyframes fadeInLeft {
+            from { opacity: 0; transform: translateX(-40px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .photo-wrapper {
+            position: relative;
+            width: 340px;
+            height: 420px;
+        }
+
+        .photo-wrapper::before {
+            content: '';
+            position: absolute;
+            inset: -8px;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--secondary) 100%);
+            border-radius: 32px;
+            z-index: -1;
+            opacity: 0.2;
+            animation: pulse-glow 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { transform: scale(1); opacity: 0.2; }
+            50% { transform: scale(1.02); opacity: 0.35; }
+        }
+
+        .photo-inner {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--accent-light) 0%, #FFF 100%);
+            border-radius: 28px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+            transition: transform 0.4s ease;
+        }
+
+        .photo-inner:hover {
+            transform: scale(1.05);
+        }
+
+        .photo-inner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .photo-placeholder-icon {
+            font-size: 4rem;
+            color: var(--accent);
+            opacity: 0.4;
+            margin-bottom: 1rem;
+        }
+
+        .photo-placeholder-text {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            letter-spacing: 0.05em;
+        }
+
+        .hero-content {
+            max-width: 550px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.6rem 1.25rem;
+            background: var(--bg-card);
+            border-radius: 50px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--shadow);
+            animation: fadeUp 0.6s ease forwards;
+        }
+
+        .hero-badge .dot {
+            width: 8px;
+            height: 8px;
+            background: var(--secondary);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.2); opacity: 0.7; }
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 3.75rem);
+            font-weight: 700;
+            line-height: 1.15;
+            margin-bottom: 1rem;
+            color: var(--text);
+            letter-spacing: -0.03em;
+            animation: fadeUp 0.6s ease 0.1s forwards;
+            opacity: 0;
+        }
+
+        .hero h1 .highlight {
+            color: var(--accent);
+            position: relative;
+        }
+
+        .hero h1 .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 4px;
+            left: 0;
+            right: 0;
+            height: 12px;
+            background: var(--accent-light);
+            z-index: -1;
+            border-radius: 4px;
+        }
+
+        .hero-title-sub {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+            animation: fadeUp 0.6s ease 0.15s forwards;
+            opacity: 0;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            line-height: 1.85;
+            margin-bottom: 2rem;
+            animation: fadeUp 0.6s ease 0.2s forwards;
+            opacity: 0;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            animation: fadeUp 0.6s ease 0.25s forwards;
+            opacity: 0;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 1rem 2rem;
+            background: var(--accent);
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            border-radius: 50px;
+            transition: all 0.4s ease;
+            box-shadow: var(--shadow);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-hover);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-accent);
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 1rem 2rem;
+            background: var(--bg-card);
+            border: 2px solid var(--accent-light);
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            border-radius: 50px;
+            transition: all 0.4s ease;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow);
+        }
+
+        .hero-social {
+            display: flex;
+            gap: 0.75rem;
+            animation: fadeUp 0.6s ease 0.3s forwards;
+            opacity: 0;
+        }
+
+        .hero-social a {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--bg-card);
+            border-radius: 16px;
+            border: 2px solid var(--accent-light);
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            transition: all 0.4s ease;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .hero-social a:hover {
+            color: var(--accent);
+            transform: translateY(-5px) rotate(5deg);
+            box-shadow: var(--shadow);
+            border-color: var(--accent);
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(25px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Sections */
+        section {
+            padding: 7rem 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text);
+            letter-spacing: -0.02em;
+            margin-bottom: 0.75rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+        }
+
+        .section-subtitle a {
+            color: var(--accent);
+            text-decoration: none;
+            border-bottom: 1px solid var(--accent-light);
+            transition: all 0.3s ease;
+        }
+
+        .section-subtitle a:hover {
+            border-bottom-color: var(--accent);
+        }
+
+        /* Alternating section backgrounds */
+        .section-warm {
+            background: var(--bg-warm);
+            max-width: none;
+            padding: 7rem 4rem;
+        }
+
+        .section-warm .section-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* News Section */
+        .news-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            background: var(--bg-card);
+            border-radius: 20px;
+            padding: 1.5rem 2rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .news-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.75rem 0;
+            border-bottom: 2px solid var(--accent-light);
+            transition: all 0.3s ease;
+        }
+
+        .news-item:last-child {
+            border-bottom: none;
+        }
+
+        .news-item:hover {
+            padding-left: 0.5rem;
+        }
+
+        .news-year {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--accent);
+            background: var(--bg);
+            padding: 0.3rem 0.75rem;
+            border-radius: 50px;
+            white-space: nowrap;
+            flex-shrink: 0;
+            min-width: 85px;
+            text-align: center;
+            border: 2px solid var(--accent-light);
+        }
+
+        .news-text {
+            font-size: 0.95rem;
+            color: var(--text);
+            line-height: 1.5;
+        }
+
+        .news-text .emoji {
+            margin-right: 0.5rem;
+        }
+
+        /* Research Section */
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 1.75rem;
+        }
+
+        .research-card {
+            padding: 2.25rem;
+            background: var(--bg-card);
+            border-radius: 24px;
+            border: 2px solid var(--accent-light);
+            transition: all 0.4s ease;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .research-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent);
+        }
+
+        .research-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .research-icon {
+            width: 56px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
+            border-radius: 16px;
+            color: white;
+            font-size: 1.3rem;
+            box-shadow: 0 8px 20px rgba(45, 113, 184, 0.3);
+            flex-shrink: 0;
+        }
+
+        .research-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0;
+            color: var(--text);
+        }
+
+        .research-card p {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.75;
+        }
+
+        .research-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            margin-left: 0.4rem;
+            padding: 0.2rem 0.6rem;
+            background: var(--accent-bg);
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.75rem;
+            font-weight: 500;
+            border-radius: 50px;
+            border: 2px solid var(--accent-light);
+            transition: all 0.3s ease;
+            vertical-align: middle;
+        }
+
+        .research-link:hover {
+            background: var(--accent);
+            color: white;
+        }
+
+        .research-link i {
+            font-size: 0.6rem;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .tag {
+            padding: 0.4rem 1rem;
+            background: var(--accent-bg);
+            border-radius: 50px;
+            font-size: 0.8rem;
+            color: var(--accent);
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .tag:hover {
+            background: var(--accent-light);
+        }
+
+        /* Publications Section */
+        .publications-list {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .publication {
+            display: flex;
+            gap: 1.75rem;
+            padding: 2rem;
+            background: var(--bg-card);
+            border-radius: 24px;
+            transition: all 0.4s ease;
+            box-shadow: var(--shadow-sm);
+            text-decoration: none;
+            color: inherit;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+
+        .publication:hover {
+            transform: translateY(-6px) scale(1.01);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent);
+            background: linear-gradient(135deg, var(--bg-card) 0%, var(--accent-bg) 100%);
+        }
+
+        .publication:hover .publication-icon {
+            background: var(--accent);
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .publication:hover h3 {
+            color: var(--accent);
+        }
+
+        .publication-icon {
+            width: 56px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--accent-light);
+            border-radius: 16px;
+            color: var(--accent);
+            font-size: 1.3rem;
+            flex-shrink: 0;
+            transition: all 0.4s ease;
+        }
+
+        .publication-status {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            background: var(--secondary);
+            color: white;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.75rem;
+        }
+
+        .publication h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            line-height: 1.5;
+            color: var(--text);
+            transition: color 0.3s ease;
+        }
+
+        .publication-meta {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Education Section */
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 1.75rem;
+        }
+
+        .education-card {
+            padding: 2.25rem;
+            background: var(--bg-card);
+            border-radius: 24px;
+            transition: all 0.4s ease;
+            box-shadow: var(--shadow-sm);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .education-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent) 0%, var(--secondary) 100%);
+        }
+
+        .education-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .education-period {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 0.75rem;
+        }
+
+        .education-card h3 {
+            font-size: 1.35rem;
+            font-weight: 600;
+            margin-bottom: 0.35rem;
+            color: var(--text);
+        }
+
+        .education-card h4 {
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .education-card p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.75;
+        }
+
+        .education-card p a {
+            color: var(--accent);
+            text-decoration: none;
+            border-bottom: 1px solid var(--accent-light);
+            transition: all 0.3s ease;
+        }
+
+        .education-card p a:hover {
+            border-bottom-color: var(--accent);
+        }
+
+        .gpa-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1.25rem;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: white;
+            margin-top: 1.5rem;
+            box-shadow: 0 6px 20px rgba(212, 114, 106, 0.3);
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .project-card {
+            display: block;
+            padding: 2rem;
+            background: var(--bg-card);
+            border-radius: 24px;
+            transition: all 0.4s ease;
+            box-shadow: var(--shadow-sm);
+            text-decoration: none;
+            color: inherit;
+            border: 2px solid transparent;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent);
+        }
+
+        .project-card:hover h3 {
+            color: var(--accent);
+        }
+
+        .project-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-icon {
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--accent-light);
+            border-radius: 12px;
+            color: var(--accent);
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .project-card:hover .project-icon {
+            background: var(--accent);
+            color: white;
+            transform: rotate(5deg);
+        }
+
+        .project-card h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-bottom: 0;
+            color: var(--text);
+            transition: color 0.3s ease;
+        }
+
+        .project-card p {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+
+        /* Contact Section */
+        .contact-section {
+            text-align: center;
+            padding: 8rem 4rem;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
+            max-width: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+        }
+
+        .contact-section::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 400px;
+            height: 400px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 50%;
+        }
+
+        .contact-section .section-title {
+            color: white;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .contact-description {
+            font-size: 1.15rem;
+            color: rgba(255,255,255,0.9);
+            max-width: 500px;
+            margin: 0 auto 2.5rem;
+            position: relative;
+        }
+
+        .contact-email {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 2.5rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .contact-email:hover {
+            transform: scale(1.05);
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            position: relative;
+        }
+
+        .contact-links a {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 1rem 1.75rem;
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 50px;
+            color: white;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.4s ease;
+        }
+
+        .contact-links a:hover {
+            background: rgba(255,255,255,0.35);
+            transform: translateY(-4px);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2.5rem;
+            background: var(--bg);
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Mobile Toggle */
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .mobile-toggle span {
+            display: block;
+            width: 22px;
+            height: 2px;
+            background: var(--text);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            nav {
+                padding: 1rem 2rem;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding: 7rem 2rem 4rem;
+                gap: 3rem;
+            }
+
+            .hero-photo {
+                order: -1;
+            }
+
+            .photo-wrapper {
+                width: 280px;
+                height: 340px;
+            }
+
+            .hero-content {
+                max-width: 600px;
+                margin: 0 auto;
+            }
+
+            .hero h1 .highlight::after {
+                display: none;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero-social {
+                justify-content: center;
+            }
+
+            section, .section-warm {
+                padding: 5rem 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem 1.5rem;
+            }
+
+            .mobile-toggle {
+                display: flex;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 58px;
+                left: 0;
+                right: 0;
+                background: var(--bg);
+                flex-direction: column;
+                padding: 1.5rem;
+                gap: 1.25rem;
+                box-shadow: var(--shadow);
+                transform: translateY(-150%);
+                opacity: 0;
+                transition: all 0.4s ease;
+            }
+
+            .nav-links.active {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            .hero {
+                padding: 6rem 1.5rem 3rem;
+            }
+
+            .photo-wrapper {
+                width: 240px;
+                height: 290px;
+            }
+
+            .hero h1 {
+                font-size: 2.25rem;
+            }
+
+            .hero-title-sub {
+                font-size: 1.2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .research-grid,
+            .education-grid,
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .news-item {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 0.5rem;
+                padding: 0.6rem 0;
+                border-bottom: 2px solid var(--accent-light);
+            }
+            
+            .news-year {
+                min-width: auto;
+                font-size: 0.7rem;
+            }
+            
+            .news-text {
+                font-size: 0.9rem;
+                line-height: 1.5;
+            }
+
+            .publication {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .contact-section {
+                padding: 5rem 1.5rem;
+            }
+
+            .contact-links {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background shapes -->
+    <div class="bg-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#" class="logo" style="font-size: 2.1rem; font-weight: 700; text-decoration: none; color: #2d71b8;">Amirali Rayegan</a>
+        <button class="mobile-toggle" onclick="toggleNav()" style="font-size: 1.7rem;">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-links">
+            <li><a href="#about" style="font-size: 1.2rem;">About</a></li>
+            <li><a href="#news" style="font-size: 1.2rem;">News</a></li>
+            <li><a href="#research" style="font-size: 1.2rem;">Research</a></li>
+            <li><a href="#publications" style="font-size: 1.2rem;">Publications</a></li>
+            <li><a href="#education" style="font-size: 1.2rem;">Education</a></li>
+            <li><a href="#projects" style="font-size: 1.2rem;">Projects</a></li>
+            <li><a href="#contact" style="font-size: 1.2rem;">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="about">
+        <div class="hero-photo">
+            <div class="photo-wrapper">
+                <div class="photo-inner">
+                    <!-- Replace with your actual image -->
+                    <img src="pic.png" alt="Amirali Rayegan" style="width:110%; height:110%; object-fit:cover; object-position: center;">
+                    <!-- <i class="fas fa-user photo-placeholder-icon"></i>
+                    <span class="photo-placeholder-text">Your photo</span> -->
+                </div>
+            </div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge" style="color: #203040;">
+                <span class="dot"></span>
+                PhD Candidate at NC State
+            </div>
+            <h1>Hi, I'm <span class="highlight">Amirali</span></h1>
+            <p class="hero-title-sub">Machine Learning Researcher</p>
+            <p class="hero-description" style="color: #203040;">
+                I'm a student. A student in science, visionary AI, statistics, and lastly Machine Leraning and Software Engineering. Currently, PhDs and research took up almost all my time. When I find a spare time, I play tennis and Chess. Like a Lot!!
+            </p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn-primary">
+                    <i class="fas fa-envelope"></i> Get in Touch
+                </a>
+                <a href="cv.pdf" class="btn-secondary" target="_blank" rel="noopener">
+                    <i class="fas fa-file-alt"></i> My Latest Resume
+                </a>
+            </div>
+            <div class="hero-social">
+                <a href="mailto:arayega@ncsu.edu" title="Email" style="text-decoration: none;"><i class="fas fa-envelope"></i></a>
+                <a href="https://linkedin.com/in/amirali-raygan" target="_blank" title="LinkedIn" style="text-decoration: none;"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/amiiralii" target="_blank" title="GitHub" style="text-decoration: none;"><i class="fab fa-github"></i></a>
+                <a href="https://scholar.google.com/citations?user=v3pH3l8AAAAJ&hl=en&oi=ao" target="_blank" title="Google Scholar" style="text-decoration: none;"><i class="fas fa-graduation-cap"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section class="section-warm" id="news">
+        <div class="section-inner">
+            <div class="section-header">
+                <h2 class="section-title">Latest News</h2>
+                <p class="section-subtitle">What I've been recently up to</p>
+            </div>
+            <div class="news-list fade-in">
+                <div class="news-item">
+                    <span class="news-year">Dec 2025</span>
+                    <span class="news-text"><span class="emoji">📝</span>Registered Report submitted to MSR conference (under review)</span>
+                </div>
+                <div class="news-item">
+                    <span class="news-year">Dec 2025</span>
+                    <span class="news-text"><span class="emoji">📝</span>Showcase paper submitted to MSR conference (under review)</span>
+                </div>
+                <div class="news-item">
+                    <span class="news-year">Nov 2025</span>
+                    <span class="news-text"><span class="emoji">🎓</span>Passed my Written Preliminary Exam (first PhD milestone)</span>
+                </div>
+                <div class="news-item">
+                    <span class="news-year">Sep 2025</span>
+                    <span class="news-text"><span class="emoji">📝</span>Paper submitted to Journal of Systems and Software (under review)</span>
+                </div>
+                <div class="news-item">
+                    <span class="news-year">Jul 2025</span>
+                    <span class="news-text"><span class="emoji">💻</span>Summer Camp Instructor at NCSU for high school students</span>
+                </div>
+                <div class="news-item">
+                    <span class="news-year">Jun 2025</span>
+                    <span class="news-text"><span class="emoji">🏆</span>NCSU College of Engineering Graduate Merit Award</span>
+                </div>
+                <div class="news-item">
+                    <span class="news-year">May 2025</span>
+                    <span class="news-text"><span class="emoji">🎖️</span>CYC Best Engagement Award for cloud security compliance</span>
+                </div>
+                <div class="news-item">
+                    <span class="news-year">Sep 2024</span>
+                    <span class="news-text"><span class="emoji">🌟</span>Joined Consult Your Community as a Business Analyst</span>
+                </div>
+                <div class="news-item">
+                    <span class="news-year">Jun 2024</span>
+                    <span class="news-text"><span class="emoji">🏆</span>NCSU College of Engineering Graduate Merit Award</span>
+                </div>
+                <div class="news-item">
+                    <span class="news-year">Jan 2024</span>
+                    <span class="news-text"><span class="emoji">🎓</span>Started my PhD at NC State</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Section -->
+    <section id="research">
+        <div class="section-header">
+            <h2 class="section-title">Research</h2>
+            <p class="section-subtitle"><strong>Areas I'm passionate about exploring. Currently doing research under supervision of <a href="https://timm.fyi/" target="_blank">Dr. Tim Menzies</a>.</strong></p>
+        </div>
+
+        <div class="research-grid">
+            <div class="research-card fade-in">
+                <div class="research-header">
+                    <div class="research-icon"><i class="fas fa-balance-scale"></i></div>
+                    <h3>Achieving Stability through Causality (Ongoing)</h3>
+                </div>
+                <p>
+                    Investigatnig whether replacing correlation-based decision rules with causality-aware reasoning can make software analytics models more stable, interpretable, and trustworthy, by comparing causal and correlational models. 
+                    <!-- <a href="#" class="research-link">View <i class="fas fa-arrow-right"></i></a> -->
+                </p>
+                <div class="tags">
+                    <span class="tag">Search-Based SE</span>
+                    <span class="tag">Causality</span>
+                    <span class="tag">Stability</span>
+                    <span class="tag">EZR</span>
+                </div>
+            </div>
+            <div class="research-card fade-in">
+                <div class="research-header">
+                    <div class="research-icon"><i class="fas fa-lightbulb"></i></div>
+                    <h3>Label-Efficient SE Optimization</h3>
+                </div>
+                <p>
+                    Developing the EZR framework for SE Multi-Objective optimization that achieves 
+                    state-of-the-art results while reducing labeling costs by 91% on average. 
+                    <a href="https://arxiv.org/abs/2509.08667" class="research-link">View <i class="fas fa-arrow-right"></i></a>
+                </p>
+                <div class="tags">
+                    <span class="tag">Software Engineering</span>
+                    <span class="tag">Search-Based SE</span>
+                    <span class="tag">Machine Learning</span>
+                    <span class="tag">Optimization</span>
+                    <span class="tag">Explanation</span>
+                </div>
+            </div>
+            
+            <div class="research-card fade-in">
+                <div class="research-header">
+                    <div class="research-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3>Machine Learning for Price Prediction (Undergrad research)</h3>
+                </div>
+                <p>
+                    Applying ARIMA, SVM, RNN, LSTM, and Bi-LSTM for stock price prediction tasks 
+                    with comparative analysis. 
+                    <a href="https://ieeexplore.ieee.org/abstract/document/10044075" class="research-link">View <i class="fas fa-arrow-right"></i></a>
+                </p>
+                <div class="tags">
+                    <span class="tag">Time Series</span>
+                    <span class="tag">Deep Learning</span>
+                    <span class="tag">Finance</span>
+                </div>
+            </div>
+            <div class="research-card fade-in">
+                <div class="research-header">
+                    <div class="research-icon"><i class="fas fa-link"></i></div>
+                    <h3>Blockchain Analysis (Undergrad research)</h3>
+                </div>
+                <p>
+                    Investigated Ethereum's transition from PoW to PoS, exploring implications 
+                    for network security, energy consumption, and market dynamics. 
+                </p>
+                <div class="tags">
+                    <span class="tag">Blockchain</span>
+                    <span class="tag">Ethereum</span>
+                    <span class="tag">PoS/PoW</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section class="section-warm" id="publications">
+        <div class="section-inner">
+            <div class="section-header">
+                <h2 class="section-title">Publications</h2>
+                <p class="section-subtitle">My academic contributions</p>
+            </div>
+            <div class="publications-list">
+                <a href="#" class="publication fade-in">
+                    <div>
+                        <span class="publication-status">Under Review - Registered Report</span>
+                        <h3>to be updated ...</h3>
+                        <p class="publication-meta">Mining Software Repositories (MSR) - <strong>Amirali Rayegan</strong>, Tim Menzies</p>
+                    </div>
+                </a>
+                <a href="https://arxiv.org/abs/2511.16882" target="_blank" class="publication fade-in">
+                    <div>
+                        <span class="publication-status">Under Review - Data and Tool Showcase Track</span>
+                        <h3>MOOT: a Repository of Many Multi-Objective Optimization Tasks</h3>
+                        <p class="publication-meta">Mining Software Repositories (MSR) - Tim Menzies, Tao Chen, Yulong Ye, Kishan Kumar Ganguly, <strong>Amirali Rayegan</strong>, Srinath Srinivasan, Andre Lustosa</p>
+                    </div>
+                </a>
+                <a href="https://arxiv.org/abs/2509.08667" target="_blank" class="publication fade-in">
+                    <div>
+                        <span class="publication-status">Under Review</span>
+                        <h3>Minimal Data, Maximum Clarity: A Heuristic for Explaining Optimization</h3>
+                        <p class="publication-meta">Journal of Systems and Software (JSS) - <strong>Amirali Rayegan</strong>, Tim Menzies</p>
+                    </div>
+                </a>
+                <a href="https://ieeexplore.ieee.org/abstract/document/10044075" target="_blank" class="publication fade-in">
+                    <div>
+                        <span class="publication-status">Published in ICSPIS 2022</span>
+                        <h3>A Comparative Study of Machine Learning Techniques for Stock Price Prediction</h3>
+                        <p class="publication-meta">8th Iranian Conference on Signal Processing and Intelligent Systems (ICSPIS) - <strong>Amirali Rayegan</strong>, Ali Shiri, Behnam Bahrak</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <div class="section-header">
+            <h2 class="section-title">Education</h2>
+            <p class="section-subtitle">My academic journey</p>
+        </div>
+        <div class="education-grid">
+            <div class="education-card fade-in">
+                <p class="education-period">2024 — Present</p>
+                <h3>PhD in Computer Science</h3>
+                <h4>North Carolina State University</h4>
+                <p>Research in WISER software engineering lab, with <a href="https://timm.fyi/" target="_blank">Dr. Tim Menzies</a>.</p>
+                <div class="gpa-badge"><i class="fas fa-star"></i> 4.0 GPA</div>
+            </div>
+            <div class="education-card fade-in">
+                <p class="education-period">2018 — 2023</p>
+                <h3>BSc Computer Engineering</h3>
+                <h4>University of Tehran</h4>
+                <p>Information Technology Minor.</p>
+                <div class="gpa-badge"><i class="fas fa-star"></i> 3.62 GPA</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section-warm" id="projects">
+        <div class="section-inner">
+            <div class="section-header">
+                <h2 class="section-title">Academic Projects</h2>
+                <p class="section-subtitle">Things I've built and worked on</p>
+            </div>
+            <div class="projects-grid">
+                <a href="https://github.com/amiiralii/Advanced-AI-Projects" target="_blank" class="project-card fade-in">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fas fa-robot"></i></div>
+                        <h3>AI Pathfinding Optimization</h3>
+                    </div>
+                    <p>A-Star and genetic algorithms for obstacle-filled environment navigation.</p>
+                    <div class="tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">A*</span>
+                        <span class="tag">Genetic Algorithms</span>
+                    </div>
+                </a>
+                <a href="https://github.com/amiiralii/AI-Course-Projects/tree/main/NLP%20-%20Naive%20Bayes" target="_blank" class="project-card fade-in">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fas fa-comments"></i></div>
+                        <h3>Sentiment Analysis</h3>
+                    </div>
+                    <p>NLP model achieving 92% accuracy on customer feedback analysis.</p>
+                    <div class="tags">
+                        <span class="tag">NLP</span>
+                        <span class="tag">TensorFlow</span>
+                    </div>
+                </a>
+                <a href="https://colab.research.google.com/drive/1T4b45LZ5vIiah0Y6lFTCQi95weQm22kT?usp=sharing" target="_blank" class="project-card fade-in">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fas fa-chart-bar"></i></div>
+                        <h3>Stock Price Prediction</h3>
+                    </div>
+                    <p>Comparative ML study with 85% accuracy, published research.</p>
+                    <div class="tags">
+                        <span class="tag">ARIMA</span>
+                        <span class="tag">LSTM</span>
+                        <span class="tag">RNN</span>
+                        <span class="tag">PyTorch</span>
+                    </div>
+                </a>
+                <a href="https://github.com/amiiralii/AI-Course-Projects/tree/main/Neural%20Network" target="_blank" class="project-card fade-in">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fas fa-lungs"></i></div>
+                        <h3>COVID-19 CT Analysis</h3>
+                    </div>
+                    <p>Neural network for CT scan analysis with 90%+ accuracy.</p>
+                    <div class="tags">
+                        <span class="tag">CNN</span>
+                        <span class="tag">Keras</span>
+                    </div>
+                </a>
+                <a href="https://github.com/amiiralii/Advance-Python-Course" target="_blank" class="project-card fade-in">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fas fa-car"></i></div>
+                        <h3>Car Price Prediction</h3>
+                    </div>
+                    <p>Web scraping and database pipeline with predictive models.</p>
+                    <div class="tags">
+                        <span class="tag">Scraping</span>
+                        <span class="tag">MariaDB</span>
+                    </div>
+                </a>
+                <a href="https://github.com/amiiralii/Design-Database-laboratory" target="_blank" class="project-card fade-in">
+                    <div class="project-header">
+                        <div class="project-icon"><i class="fas fa-database"></i></div>
+                        <h3>Database Systems Laboratory</h3>
+                    </div>
+                    <p>Comprehensive database projects covering SQL, NoSQL, streaming, and search.</p>
+                    <div class="tags">
+                        <span class="tag">PostgreSQL</span>
+                        <span class="tag">Redis</span>
+                        <span class="tag">Neo4j</span>
+                        <span class="tag">Elasticsearch/Kibana</span>                        
+                        <span class="tag">Apache Kafka</span>
+                        
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <h2 class="section-title">Let's Connect</h2>
+        <p class="contact-description" style="max-width: 800px; margin-left: auto; margin-right: auto;">
+            I'm always open to discussing research collaborations, 
+            interesting projects, or opportunities in machine learning and AI.
+        </p>
+        <a href="mailto:arayega@ncsu.edu" class="contact-email">arayega@ncsu.edu</a>
+        <div class="contact-links">
+            <a href="https://linkedin.com/in/amirali-raygan" target="_blank">
+                <i class="fab fa-linkedin-in"></i> LinkedIn
+            </a>
+            <a href="https://github.com/amiiralii" target="_blank">
+                <i class="fab fa-github"></i> GitHub
+            </a>
+            <a href="https://scholar.google.com/citations?hl=en&user=v3pH3l8AAAAJ" target="_blank">
+                <i class="fas fa-graduation-cap"></i> Google Scholar
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Amirali Rayegan | Built with Vibe Coding and <span style="color: blue;">❤</span></p>
+    </footer>
+
+    <script>
+        function toggleNav() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        }
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('.nav-links').classList.remove('active');
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
